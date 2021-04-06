@@ -5,9 +5,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>NeoFox Informática</title>
+	<meta name="description"
+		content="Desarrollo de sistemas informaticos y diseño web. NeoFox Informaticos del Bio-Bio" />
+	<link rel="icon" type="image/x-icon" href="img/neofox-ico.ico">
 	<link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="css/fixed.css">
+	<link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
+	<link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<meta name="csrf-token" content="OxzxCb77AAq2WWQSKRV0p6WBzSCgwLLqwplOLOcZ" />
 </head>
 
 <body data-spy="scroll" data-target="#navbarResponsive">
@@ -67,8 +74,10 @@
 
 		<div class="col-12 narrow text-center">
 			<h1>Sobre Nosotros</h1>
-			<p class="lead">Somos una empresa enfocada a dar soluciones a todo tipo de problemas informaticos, damos conocer su
-				empresa/negocio a internet y tambien a dar soluciones administrativas con nuestros sistemas informaticos.
+			<p class="lead">Somos una empresa enfocada a dar soluciones a todo tipo de problemas informaticos, damos
+				conocer su
+				empresa/negocio a internet y tambien a dar soluciones administrativas con nuestros sistemas
+				informaticos.
 				Contamos con más de 5 años de experiencia en el desarrollo informatico</p>
 			<!-- <a class="btn btn-secondary btn-md" href="http://www.google.cl" target="_blank">Placeholder Button</a> -->
 		</div>
@@ -130,28 +139,33 @@
 					<div class="heading-underline"></div>
 				</div>
 
-				<div class="col-md-4">
-					<h3>Sindicato CMPC Santa Fe</h3>
-					<div class="feature">
-						<a href="http://www.sindicatoptastafe.cl/" target="_blank"><i class="fas fa-code fa-3x"></i></a>
-					</div>
-					<p class="lead">Sistema de Administración</p>
-				</div>
+				<div class="owl-carousel owl-theme">
 
-				<div class="col-md-4">
-					<h3>Peluqueria Licidan</h3>
-					<div class="feature">
-						<a href="http://licidan.neofox.cl/" target="_blank"><i class="fas fa-code fa-3x"></i></a>
+					<div class="item">
+						<h3>Sindicato CMPC Santa Fe</h3>
+						<div class="feature">
+							<a href="https://cmpc.neofox.cl/app/" target="_blank"><i
+									class="fas fa-code fa-3x"></i></a>
+						</div>
+						<p class="lead">Sistema de Administración Sindical</p>
 					</div>
-					<p class="lead">Pagina de Presentación</p>
-				</div>
 
-				<div class="col-md-4">
-					<h3>RyS Contabilidad</h3>
-					<div class="feature">
-						<a href="http://banq.neofox.cl/" target="_blank"><i class="fas fa-code fa-3x"></i></a>
+					<div class="item">
+						<h3>Possidere</h3>
+						<div class="feature">
+							<a target="_blank"><i class="fas fa-code fa-3x"></i></a>
+						</div>
+						<p class="lead">Desarrolladores Front-End</p>
 					</div>
-					<p class="lead">Pagina de Presentación</p>
+
+					<div class="item">
+						<h3>Vain</h3>
+						<div class="feature">
+							<a target="_blank"><i class="fas fa-code fa-3x"></i></a>
+						</div>
+						<p class="lead">Apoyo Desarrollo Front-End</p>
+					</div>
+
 				</div>
 
 			</div>
@@ -174,35 +188,36 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-6 clients">
-					<form action="">
+				<div class="col-md-8 clients">
+					<form>
 						<div class="row text-center">
 							<div class="col-md-12">
 								<h3>Enviar Mensaje</h3>
 								<p>Si desea contactar con nosotros puede escribirnos un mensaje y le responderemos a la
 									brevedad</p>
 								<div class="form-group">
-									<input name="nombre" type="text" class="form-control"
-										placeholder="Ingrese su nombre">
+									<input name="contacto" type="text" class="form-control"
+										placeholder="Ingrese su nombre" minlength="2" maxlength="50">
 								</div>
 								<div class="form-group">
-									<input name="numero" type="text" class="form-control"
-										placeholder="Ingrese su numero de telefono">
+									<input name="telefono" type="text" class="form-control"
+										placeholder="Ingrese su numero de telefono" minlength="5" maxlength="15">
 								</div>
 								<div class="form-group">
-									<input name="email" type="email" class="form-control"
-										placeholder="Ingrese su correo">
+									<input name="correo" type="email" class="form-control"
+										placeholder="Ingrese su correo (Opcional)" minlength="4" maxlength="50">
 								</div>
 								<div class="form-group">
-									<textarea id="text-area" name="text-area" class="form-control" cols="30" rows="5"
-										placeholder="Ingrese su mensaje"></textarea>
+									<textarea id="text-area" name="mensaje" class="form-control" cols="30" rows="5"
+										placeholder="Ingrese su mensaje" minlength="4" maxlength="100"></textarea>
 								</div>
-								<a href="#" class="btn btn-secondary btn-block text-white">Enviar</a>
+								<button class="btn btn-secondary btn-block text-white btn-send">Enviar</button>
+								<button type="reset" hidden id="resetForm"></button>
 							</div>
 						</div>
 					</form>
 				</div>
-				<div class="col-md-6 clients">
+				<div class="col-md-4 clients">
 					<div class="row text-center">
 						<div class="col-md-12">
 							<h3>Redes Sociales</h3>
@@ -211,14 +226,14 @@
 								<div class="col-md-6">
 									<a href="https://www.facebook.com/NeoFoxInformatica" target="_blank"><img
 											src="img/fb-icon.png">
-									<h3>Facebook</h3>
-								</a>
+										<h3>Facebook</h3>
+									</a>
 								</div>
 								<div class="col-md-6">
 									<a href="https://www.instagram.com/neofoxinformatica" target="_blank"><img
 											src="img/ins-icon.png">
-									<h3>Instagram</h3>
-								</a>
+										<h3>Instagram</h3>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -244,16 +259,47 @@
 					<img src="img/neofox-nav.png">
 					<p>NeoFox Informatica Ltda Todos los Derechos Reservados.</p>
 					<strong>Información de Contacto</strong>
-					<p>43 258456<br>neofox.informatica@gmail.com</p>
-					<a href="https://www.facebook.com/NeoFoxInformatica" target="_blank"><i class="fab fa-facebook-square"></i></a>
-					<a href="https://www.instagram.com/neofoxinformatica" target="_blank"><i class="fab fa-instagram"></i></a>
+					<p>+569 2038 7028<br>neofox.informatica@gmail.com</p>
+					<a href="https://www.facebook.com/NeoFoxInformatica" target="_blank"><i
+							class="fab fa-facebook-square"></i></a>
+					<a href="https://www.instagram.com/neofoxinformatica" target="_blank"><i
+							class="fab fa-instagram"></i></a>
 				</div>
 				<hr class="socket">
-				&copy; NeoFox Ltda. 2020
+				&copy; NeoFox Ltda. 2021
 			</div>
 		</footer>
 	</div>
 	<!-- FIN DE CONTACTO -->
+
+
+
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary" id="modal-success" data-toggle="modal" data-target="#exampleModal"
+		hidden>
+		Launch demo modal
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Mensaje Enviado Correctamente</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-center">
+					<h3>Nos pondremos en contacto con usted lo antes posible</h3>
+				</div>
+				<div class="modal-footer mx-auto">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">¡Ok!</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!--- Script Source Files -->
 	<script src="js/jquery-3.3.1.min.js"></script>
@@ -261,6 +307,114 @@
 	<script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
 	<!--- End of Script Source Files -->
 
+	<script src="OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js" type="text/javascript"></script>
+	<script src="OwlCarousel2-2.3.4/dist/owl.carousel.js" type="text/javascript"></script>
+
+
+
 </body>
+
+<script type="text/javascript">
+
+	var owl = $('.owl-carousel');
+	owl.owlCarousel({
+		loop: true,
+		margin: 10,
+		autoplay: true,
+		autoplayTimeout: 4000,
+		responsive: {
+			0: {
+				items: 1
+			},
+			600: {
+				items: 2
+			},
+			1000: {
+				items: 3
+			}
+		}
+	});
+	owl.on('mousewheel', '.owl-stage', function (e) {
+		if (e.deltaY > 0) {
+			owl.trigger('next.owl');
+		} else {
+			owl.trigger('prev.owl');
+		}
+		e.preventDefault();
+	});
+
+	function validar_email(email) {
+		var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		return regex.test(email) ? true : false;
+	}
+
+	$.ajaxSetup({
+
+		headers: {
+
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+		}
+
+	});
+
+
+	$(".btn-send").click(function (e) {
+
+
+
+		e.preventDefault();
+
+
+
+		var contacto = $("input[name=contacto]").val();
+		if (contacto == '') {
+			return alert("Debe de ingresar un nombre");
+		}
+
+		var correo = $("input[name=correo]").val();
+		if (correo == '') {
+			return alert("Debe de ingresar un correo");
+		}
+		else if (validar_email(correo)) {
+			var correo = $("input[name=correo]").val();
+		} else {
+			return alert("Formato de correo incorrecto");
+		}
+
+		var telefono = $("input[name=telefono]").val();
+		if (telefono == '') {
+			return alert("Debe de ingresar su numero");
+		}
+
+		var mensaje = $("textarea[name=mensaje]").val();
+		if (mensaje == '') {
+			return alert("Debe de ingresar un mensaje");
+		}
+
+
+
+		$.ajax({
+
+			type: 'POST',
+
+			url: '/send_mail',
+
+			data: { contacto: contacto, correo: correo, telefono: telefono, mensaje: mensaje },
+
+			success: function (data) {
+
+				$("#resetForm").click();
+				$("#modal-success").click();
+
+			}
+
+		});
+
+
+
+	});
+
+</script>
 
 </html>
